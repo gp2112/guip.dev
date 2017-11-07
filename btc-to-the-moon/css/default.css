@@ -1,0 +1,95 @@
+body{
+    background-image: radial-gradient(#5f3b81, #450084);
+    background-repeat: no-repeat;
+    background-size: 100% 80em;
+}
+header h1{
+    margin-top: 5%;
+    text-align: center;
+    color: darkorange;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: normal;
+    font-size: 3.5em;
+}
+#rate{
+    display: inline-block;
+    position: relative;
+    top: 5em;
+    left: 40%;
+}
+#rate h2{
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    font-size: 3em;
+    color: #41719a;
+}
+.barr{
+    display: inline-block;
+    width: 60%;
+    height: 5em;
+    margin-left: 10%;
+}
+
+.to-the-moon{
+    position: relative;
+    top: 15em;
+}
+.bitcoin-logo{
+    position: absolute;
+    top: 0%;
+    background-color: orange;
+    border-radius: 9em;
+    border-top-right-radius: 10em;
+    border-bottom-right-radius: 10em;
+    padding-left: 0%;
+}
+.moon{
+    background-image: url('moon.png');
+    width: 25%;
+    height: 22em;
+    position: absolute;
+    top: -10em;
+    right: 8.5%;
+}
+#info-btc{
+    display: none;
+    height: 2em;
+    width: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.3em;
+    position: absolute;
+    top: 60%;
+    left: 0;
+}
+#info-btc p{
+    color: orange;
+    position: relative;
+    bottom: 0.7em;
+    left: 1.8em;
+}
+#refresh{
+    background-color: darkgoldenrod;
+    border: 0;
+    color: ghostwhite;
+    font-size: 1.2em;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: normal;
+    width: 10em;
+    height: 3em;
+    position: absolute;
+    top: 40em;
+    left: 46.6em;
+    box-shadow: 0em 0.3em 0em 0em lightgrey;
+}
+#refresh:active{
+    box-shadow: 0em 0.1em 0em 0em lightgrey;
+    top: 40.2em;
+}
+.subtitle{
+    position: absolute;
+    top: 3em;
+    right: 6em;
+    color: darkgoldenrod;
+    font-family: 'Russo One', sans-serif;
+}
