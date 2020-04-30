@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Um jogo de pikachu">
+  <title>Pokemon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="arena">
+    <div id="giratina">
+      <div id="opponent-health-bar">
+        <div min="0" max="100" value="100" id="opponent-health"></div>
+      </div>
+      <img src="assets/giratina.webp" alt="Giratina" id="giratinaimg">
+      <div class="grass"></div>
+    </div>
+    <div id="dialga">
+      <div id="player-health-bar">
+        <div min="0" max="100" value="100" id="player-health"></div>
+      </div>
+      <img src="assets/dialga.webp" alt="Dialga" id="dialgaimg">
+      <div class="grass"></div>
+    </div>
+    <div id="options">
+      <div class="row">
+        <button id="flashcannon-button">
+          Flash Cannon
+        </button>
+        <button id="metalclaw-button">
+          Metal Claw
+        </button>
+      </div>
+      <div class="row">
+        <button id="slash-button">
+          Slash
+        </button>
+        <button id="irontail-button">
+          Iron Tail
+        </button>
+      </div>
+    </div>
+    <div>
+      <p id="text">
+        Please choose one attack
+      </p>
+    </div>
+  </div>
+  <audio loop id="music">
+    <source src="assets/sounds/music.mp3" type="audio/mpeg">
+  </audio>
+  <script src="gameFunc.js"></script>
+  <script src="player.js"></script>
+  <script src="attacks.js"></script>
+  <script src="ex.js"></script>
+</body>
+</html>
