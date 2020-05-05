@@ -114,16 +114,17 @@ window.onload = function() {
 
 	}, 5);
 };
-
 window.addEventListener("keydown", function(e){
 	if (e.keyCode === SPACE) {
-		keyPressed = true;
-		wingSound.play();
+		fly();
 	}
 });
 
-window.addEventListener("click", function(e){
+window.addEventListener("click", fly());
+
+window.addEventListener("touch", fly());
+
+function fly() {
 	keyPressed = true;
-	let audio = new Audio('sounds/wing.mp3');
 	wingSound.play();
-});
+}
