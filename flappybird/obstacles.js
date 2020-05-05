@@ -33,10 +33,12 @@ class Obstacle {
 let obstacles = [];
 
 function genObstacle() {
-	let width = 50;
-	let height = randInt(50, cvs.height-40);
-	let upsideDown = parseInt(Math.random() * 10 % 2);
-	let y = upsideDown ? 0 : cvs.height-height;
-	let obs = new Obstacle(cvs.width, y, width, height, upsideDown);
-	obstacles.push(obs);
+	let height0 = randInt(50, cvs.height-40);
+	for (let i=0; i<=1; i++) {
+		let width = 30;
+		let height = i ? cvs.height - height0 - space: height0;
+		let y = i ? 0 : cvs.height-height;
+		let obs = new Obstacle(cvs.width, y, width, height, i);
+		obstacles.push(obs);
+	}
 }
