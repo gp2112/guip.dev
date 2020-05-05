@@ -70,7 +70,7 @@ window.onload = function() {
 			genObstacle();
 		}
 
-		for (let i=0; i<obstacles.length; i++) {
+		for (let i=0; i<obstacles.length; i++) { 
 			if (obstacles[i].colide(player)) {
 				hitSound.play();
 				clearInterval(fall);
@@ -114,6 +114,7 @@ window.onload = function() {
 
 	}, 5);
 };
+
 window.addEventListener("keydown", function(e){
 	if (e.keyCode === SPACE) {
 		fly();
