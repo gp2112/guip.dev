@@ -122,7 +122,7 @@ window.addEventListener("keydown", function(e){
 
 window.addEventListener("click", fly);
 
-window.addEventListener("touch", fly);
+window.addEventListener("touchstart", fly);
 
 function fly() {
 	keyPressed = true;
