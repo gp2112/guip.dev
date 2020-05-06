@@ -7,7 +7,7 @@ const SPACE = 32;
 
 let speed = (g, t) => g*t;  //Speed in function of gravity and time (5 ms)
 
-const g = 0.02; //gravity aceleration
+const g = 0.01; //gravity aceleration
 
 const speed_press = 40; // how much the bird jumps against gravity
 
