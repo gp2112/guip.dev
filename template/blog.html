@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+<div id="articles">
+	<ul>
+		{% for article in articles %}
+		<li class="article"><a href="blog/{{ article.url }}">{{ article.title }}</a>
+			<ol><li>{{ article.preview }}</li></ol>
+		</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}
