@@ -1,0 +1,67 @@
+body {
+                        font-family: 'Recursive', sans-serif;
+                }
+                a {
+                        color: grey;
+                }
+		p {
+			line-height: 1.8;
+			font-size: 17px;
+		}
+                a:hover {
+                        color: red;
+                        text-decoration:  none;
+                }
+		h3, h4 {
+			font-size: 26px;
+		}
+                .active {
+                        color: red;
+                }
+                nav {
+                        margin-top: 6%;
+                }
+                nav li{
+                        display: inline;
+                        margin:  1%;
+                }
+
+
+                #linguagens li {
+                        display: inline;
+                        margin:  1%;
+                }
+
+                #linguagens li img {
+                        height: 100px;
+                        width:  100px;
+                        margin-left: 5%;
+                        margin-top: 5%;
+                        border-radius: 25px;
+                        padding: 1%;
+
+                }
+                #linguagens li img:hover {
+                        box-shadow: -2px 2px 10px grey;
+                        position: relative;
+                        bottom: 5px;
+                        left: 5px;
+                }
+
+                #contato li {
+                        list-style-type: none;
+                        text-align:  center;
+                        margin:  1%;
+                }
+
+
+                footer p{
+                        display: inline-block;
+                }
+
+                #links {
+                        position: relative;
+                        left: 40%;
+                        display: inline-block;
+                        text-align: right;
+                }

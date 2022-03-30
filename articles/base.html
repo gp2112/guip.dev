@@ -4,7 +4,7 @@
 
 
 <head>
-	<title>Guilherme Paixã - </title>
+	<title>Guilherme Paixã - {% block title %}{% endblock %}</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +27,8 @@
 		</nav>
 	</header>
 	<main>
-		
-		
+		{% block content %}
+		{% endblock %}
 	</main>
 	<footer>
 		<div id="contato">
