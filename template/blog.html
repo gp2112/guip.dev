@@ -6,8 +6,11 @@
 <div id="articles">
 	<ul>
 		{% for article in articles %}
-		<li class="article"><a href="blog/{{ article.url }}">{{ article.title }}</a>
-			<ol><li>{{ article.preview }}</li></ol>
+		<li class="article"><a href="/blog/{{ article.url }}"><h3>{{ article.title }}</h3></a>
+			<ul>
+				<li><img class="thumb" src="{{ article.thumb }}"></li>
+				<li class="preview"><p>{{ article.preview }}</p><a href="/blog/{{ article.url }}"> ler mais...</a></li>
+			</ul>
 		</li>
 		{% endfor %}
 	</ul>
