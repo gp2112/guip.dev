@@ -9,7 +9,7 @@ env = Environment(loader=file_loader)
 
 
 # render static pages
-pages = ('projetos', 'contato', 'index')
+pages = ('projetos', 'contato', 'index', 'license')
 
 for page in pages:
     name = f'{page}.html'
@@ -49,4 +49,3 @@ for article_file in articles:
 with open(f'{domain}/blog.html', 'w') as f:
     template = env.get_template('blog.html')
     f.write(template.render(articles=articles_data))
-
