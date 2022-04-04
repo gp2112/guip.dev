@@ -9,7 +9,7 @@ env = Environment(loader=file_loader)
 
 
 # render static pages
-pages = ('projetos', 'contato', 'index', 'license')
+pages = ('projetos', 'contato', 'index', 'license', 'source')
 
 for page in pages:
     name = f'{page}.html'
@@ -39,7 +39,7 @@ for article_file in articles:
     soup = BeautifulSoup(html, 'html.parser')
     title = soup.find('title').get_text()
     preview = soup.find('p').get_text()[:200]+'...'
-    thumb = soup.find('img', class_='graf-image').attrs['src']
+    thumb = soup.find('img').attrs['src'] # select first image
     articles_data.append({
                 'title':title,
                 'preview':preview,

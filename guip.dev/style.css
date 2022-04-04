@@ -32,6 +32,12 @@ nav li{
         margin:  1%;
 }
 
+#specs {
+  list-style: none;
+}
+#specs.ba {
+  list-style-type: none;
+}
 
 
 #articles {
