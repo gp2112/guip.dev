@@ -4,6 +4,7 @@
 <head>
 	<title>Source</title>
 	<meta charset="UTF-8">
+	<meta property="og:image" content="/img/dev.jpg">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,13 +120,17 @@
       </p>
         <ol>
             <li>Hospedar seu serviço em outra porta</li>
-            <li>Utilizar o IPV6</li>
+            <li>Utilizar apenas o IPV6</li>
         </ol>
         <p>Se você não está com paciência de lidar com sua operadora, ter que chamar a Anatel e tal, a última opção é interessante.<br>
           Com o IPV6, você não necessita de NAT: ele já possui um endereço IP visível externamente para cada aparelho da sua rede. Isso é possível
           porque ele possui 128bits, ao invés de 32. Isso acaba com os problemas do IPV4, já que teriam na órdem de 10^38 possíveis IPs (provavelmentte a humanidade acaba muito antes de acabarem os IPV6s :v).
         </p>
-        <p>Só continuamos usando o IPV4 pois grande parte da internet ainda não é compatível com o IPV6, <a href="https://www.google.com/intl/pt-BR/ipv6/statistics.html" target="_blank"> apesar de já ter tido uma boa evoluída</a>.
+        <p>Só continuamos usando o IPV4 pois boa parte da internet ainda não é compatível com o IPV6, <a href="https://www.google.com/intl/pt-BR/ipv6/statistics.html" target="_blank"> apesar de já ter tido uma boa evoluída</a>.
+        <p>Bem, optei, por ora, pela exclusividade do IPV6, no caso dos serviços que quero que fiquem públicos realmente.<br>Vamos ao deploy!</p>
+    </li>
+    <li>
+
     </li>
 
   </ul>
