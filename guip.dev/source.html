@@ -127,10 +127,13 @@
           porque ele possui 128bits, ao invés de 32. Isso acaba com os problemas do IPV4, já que teriam na órdem de 10^38 possíveis IPs (provavelmentte a humanidade acaba muito antes de acabarem os IPV6s :v).
         </p>
         <p>Só continuamos usando o IPV4 pois boa parte da internet ainda não é compatível com o IPV6, <a href="https://www.google.com/intl/pt-BR/ipv6/statistics.html" target="_blank"> apesar de já ter tido uma boa evoluída</a>.
-        <p>Bem, optei, por ora, pela exclusividade do IPV6, no caso dos serviços que quero que fiquem públicos realmente.<br>Vamos ao deploy!</p>
+        <p>Bem, optei, por ora, pela exclusividade do IPV6, no caso dos serviços que quero que fiquem públicos realmente.</p>
     </li>
     <li>
-
+        <h2>Ao deploy!</h2>
+        <p>Tendo já feito a base do meu site, com o script funcionando, só falta colocar no ar. Como estava pretendendo utilizar vários subdomínios, precisei criar Virtual Hosts, já que o dns direciona apenas a um ip, não a uma porta ou programa específicos. </p><p> O programa que cria esses Hosts Virtuais vai ficar aguardando pela requisição em uma determinada porta e, dado um subdomínio, irá redirecionar para o programa que você configurar. Existem alguns modos de se fazer isso. Como o site é estático, eu apenas coloco para responder com os arquivos do site.<br>Caso fosse, por exemplo, um host local, como um programa em Flask, é possível fazer um proxy reverso, em que ele vai mandar sua requisição para o host que você quer, em determinada porta, e retornar o que este host retornar, ao clinte.</p>
+    <p>Como estou hospedando um Nextcloud também, e este dá um suporte melhor ao Apache, resolvi escolher este programa para cuidar disso. Mas, um programa que acho mais prático e eficiente é o nginx, vale a pena dar uma olhada!</p>
+    <p></p>
     </li>
 
   </ul>
