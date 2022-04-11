@@ -9,7 +9,7 @@ env = Environment(loader=file_loader)
 
 
 # render static pages
-pages = ('projetos', 'contato', 'index', 'license', 'source')
+pages = ('projetos', 'contato', 'index', 'license')
 
 for page in pages:
     name = f'{page}.html'

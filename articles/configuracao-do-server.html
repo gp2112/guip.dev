@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}Configurando meu homeserver com Raspberry Pi{% endblock %}
+
+{% block content %}
+<div id="source">
+  <h1>The Making of...</h1>
+  <p>Aqui eu vou colocar todo o setup do meu Raspberry Pi que está hospedando este site e outros serviços do meu domínio :)</p>
+
+  <ul id="specs">
+    <li>
+      <h2>Meu "Homeserver"</h2>
+      <img src="/img/mypi.jpg" width="300" height="100" alt="Minha Raspberry Pi com o fundo todo bagunçado">
+      <p>Este site e todos os meus outros serviços estão hospedados nesse pequenininha e poderosa Raspbery Pi!<br>Ela é da quarta gerração, arquitetura ARM64 [64 bits] e 8GB de RAM, o que o suficiente para rodarr tudo que preciso com uma certa tranquilidade.</p>
+      <p>De Sistema Operacional, instalei o Raspberry OS Lite de 64Bits mesmo, já que ele é baseado em Debian 11, que já estou acostumado a usar como servidor. <br> E peguei o "Lite", pois é o nome que dão para a versão Headless do SO, ou seja, sem interface gráfica, já que vou usar a Rasp apenas como server, por ssh!</p>
+    </li>
+    <li>
+      <h2>Agora vamos ao Software!</h2>
+      <p>Bem, assim que estava pensando em fazer este site, pra mim, como desenvolvedor, este obviamente a melhor coisa de se ter um site!<br>
+        Porém surgem dois pontos: </p>
+        <ol>
+          <li><p>Não tenho muita paciência com front end, design, ux...</p></li>
+          <li><p>Tenho uma certa nostalgia por sites mais estáticos, tal como os dos anos 2000 - parece que não sou mais tão novo :(</p></li>
+        </ol>
+      <p>Então foi aí que achei a biblioteca <a href="https://watercss.kognise.dev/" target="_blank">water.css</a>, dando uma <s>copiada</s> inspirada no site do querido <a href="https://misterio.me/" target="_blank">Gabriel Fontes</a>.
+        O water.css dá uma vibe bem modeninha para a sua paǵina estática e minimalista, sem ser aqueles sites estáticos antigos mais feios que ainda existem por aí...
+      </p>
+      <p>Agora tendo uma ideia melhor do design do site, vou para o backend. Ao mesmo tempo que queria fazer um site mais estático, também queria aproveitar e fazer o meu blog aqui,
+        já que já escrivi uns arrtigos no Medium. Agora, fazer tudo de forma 100% estática e ainda querer fazer um blog... bem daria um baita trabalho, imagina ter que reescrever tudo das páginas várias vezes,
+        linkar os novos artigos na front page do blog, ... <br>Enfim, <b>TRABALHO CHATO</b>!
+      </p>
+      <p>Mas também não queria usar nenhum app ou biblioteca tipo o wordpress, porque ia acabar totalmente com a graça do projeto.
+        Achando um ponto de equilíbrio entre minha preguiça e o quão divertido seria, resolvi fazer meu próprio script para gerar as páginas de forma automatizada, a fim de evittar redundâncias.
+        Já havia usado o processador de template HTML Jinja2, através do Flask, no Python. Então foi este mesmo que escolhi! Simples, divertido e direto ao ponto!
+      </p>
+      <p>A estrutura do projeto ficou assim:</p>
+      <pre>
+      <code>
+├── articles
+│   ├── base.html
+│   ├── internet-dos-anos-2020-2.html
+│   └── internet-nos-anos-2020-1.html
+├── guip.dev
+│   ├── blog
+│   │   ├── internet-dos-anos-2020-2.html
+│   │   └── internet-nos-anos-2020-1.html
+│   ├── blog.html
+│   ├── contato.html
+│   ├── img
+│   │   ├── pi.png
+│   │   └── telegram.png
+│   ├── index.html
+│   ├── license.html
+│   ├── projetos.html
+│   ├── source.html
+│   └── style.css
+├── jinja_gen.py
+├── LICENSE
+├── README.md
+└── template
+    ├── base.html
+    ├── blog.html
+    ├── contato.html
+    ├── index.html
+    ├── license.html
+    ├── projetos.html
+    └── source.html
+      </code>
+      </pre>
+      <p>Calma, está uma bagunça, eu sei, mas vamos por partes que dá pra entender!</p>
+      <ul>
+        <li><p><b>/jinja_gen.py:</b> Esse é o script que fará a "mágica"</p></li>
+        <li><p><b>/template:</b> Aqui ficam os modelos em html, que o Jinja vai renderizar através do script que fiz.</p></li>
+        <li><p><b>/articles:</b> São os artigos brutos, com apenas os htmls que importam. </p></li>
+        <li><p><b>/guip.dev:</b> É aqui que os arquivos do site já prontos ficam!</p></li>
+      </ul>
+      <p> E, basicamente, o script funciona percorrendo os arquivos HTML que estão no /template, renderizando todas as páginas em cima do base.html.
+        O mesmo irá ocorrer com as páginas dos artigos.</p>
+      <p>Agora, basta adicionar uma nova página em /templates, ou um novo artigo em /artigos, e depois rodar o jinja_gen.py, que o site fica pronto!</p>
+    </li>
+
+    <li>
+      <h2>Saindo do CGNAT</h2>
+      <p>A primeira coisa que você deve ver caso queira hospedar um site, ou qualquer serviço, de forma pública, é, fazer o redirecionamento de porta, ou, NAT,
+        em que você irá, através de seu roteador, redirecionar qualquer requisição feita em uma porta específica ao ip local da máquina que está hospedando.<br>
+        Isso é necessário porque quem fará a requisição, que está de foa da sua rede, só conhece o seu IP externo, o do roteador, enquanto seu IP interno, do seu aparelho, apenas quem está dentro da sua rrede conhece.
+        Logo, se você não especificar a ele para onde essa requisição deve ser encaminhada, ele não tem como adivinhar! </p>
+      <p> O IP que estou falando agora é o IPV4, que possui 32 bits, podendo existir cerca de 4 bilhões de IPs diferentes. Isso é um grande problema, pois já passamos desse número de dispositivos tem um tempo.
+        Por isso, as operadoras, em conjunto com a Anatel aqui no Brasil, resolveram adotar um método para contorrnar isso: o CGNAT. Nele, um IP é compartilhado com outras 63 pessoas, e este encaminhamento de porrtas, que você faria no seu roteador,
+        apenas poderia ser feito pela sua Provedora de internet. <br></p>
+        <ul>
+          <li><p>A boa notícia: é seu direito pedirr para sair do CGNAT caso precise, e ficar com um IP dinâmico.</p></li>
+          <li><p>A má notícia: as operadoras não são obrigadas a abrir algumas portas, como a 80 e 443, utilizadas pelo HTTP e HTTPS.</p></li>
+        </ul>
+        <p>Apenas nos planos empresariais você pode utilizar essas portas. Então, caso você opte por continuar no residêncial, restam duas opções:
+      </p>
+        <ol>
+            <li>Hospedar seu serviço em outra porta</li>
+            <li>Utilizar apenas o IPV6</li>
+        </ol>
+        <p>Se você não está com paciência de lidar com sua operadora, ter que chamar a Anatel e tal, a última opção é interessante.<br>
+          Com o IPV6, você não necessita de NAT: ele já possui um endereço IP visível externamente para cada aparelho da sua rede. Isso é possível
+          porque ele possui 128bits, ao invés de 32. Isso acaba com os problemas do IPV4, já que teriam na órdem de 10^38 possíveis IPs (provavelmentte a humanidade acaba muito antes de acabarem os IPV6s :v).
+        </p>
+        <p>Só continuamos usando o IPV4 pois boa parte da internet ainda não é compatível com o IPV6, <a href="https://www.google.com/intl/pt-BR/ipv6/statistics.html" target="_blank"> apesar de já ter tido uma boa evoluída</a>.
+        <p>Bem, optei, por ora, pela exclusividade do IPV6, no caso dos serviços que quero que fiquem públicos realmente.</p>
+    </li>
+    <li>
+        <h2>Ao deploy!</h2>
+        <p>Tendo já feito a base do meu site, com o script funcionando, só falta colocar no ar. Como estava pretendendo utilizar vários subdomínios, precisei criar Virtual Hosts, já que o dns direciona apenas a um ip, não a uma porta ou programa específicos. </p><p> O programa que cria esses Hosts Virtuais vai ficar aguardando pela requisição em uma determinada porta e, dado um subdomínio, irá redirecionar para o programa que você configurar. Existem alguns modos de se fazer isso. Como o site é estático, eu apenas coloco para responder com os arquivos do site.<br>Caso fosse, por exemplo, um host local, como um programa em Flask, é possível fazer um proxy reverso, em que ele vai mandar sua requisição para o host que você quer, em determinada porta, e retornar o que este host retornar, ao clinte.</p>
+    <p>Como estou hospedando um Nextcloud também, e este dá um suporte melhor ao Apache, resolvi escolher este programa para cuidar disso. Mas, um programa que acho mais prático e eficiente é o nginx, vale a pena dar uma olhada!</p>
+    <p></p>
+    </li>
+
+  </ul>
+{% endblock %}
