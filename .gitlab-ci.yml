@@ -7,7 +7,6 @@ variables:
 before_script:
   - gem install bundler
   - bundle install
-  - bundle update em-websocket
 
 test:
   stage: test
