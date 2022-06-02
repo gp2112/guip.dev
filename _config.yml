@@ -29,7 +29,6 @@ github_username:  gp2112
 linkedin_username: guip2000
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
 

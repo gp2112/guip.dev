@@ -1,0 +1,46 @@
+body {
+    font-family: 'Recursive', sans-serif;
+}
+
+p {
+	line-height: 1.8;
+	font-size: 17px;
+    &::selection {
+        background-color: rgba(200, 0, 0, 0.8);
+    }
+}
+
+h3, h4 {
+	font-size: 23px;
+}
+
+h1, h2, h3, h4 {
+    &::selection {
+        background-color: rgba(230, 0, 0, 0.8);
+    }
+
+}
+.active {
+        color: red;
+}
+
+em, strong {
+    
+    &::selection {
+        background-color: rgba(200, 200, 0, 0.8);
+    }
+
+}
+
+a {
+    color: grey;
+    &::selection {
+        background-color: rgba(200, 200, 0, 0.8);
+    }
+
+    &:hover {
+        color: red;
+        text-decoration:  none;
+    } 
+
+}
