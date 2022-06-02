@@ -27,6 +27,9 @@ url: "https://guip.dev" # the base hostname & protocol for your site, e.g. http:
 twitter_username: jonilare
 github_username:  gp2112
 linkedin_username: guip2000
+instagram_username: guip2112
+
+pgp: "43827E2886E5C34F38D577538C814D625FBD99D1"
 
 # Build settings
 plugins:
