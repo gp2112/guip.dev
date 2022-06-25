@@ -1,0 +1,25 @@
+---
+layout: default
+title: Albuns
+---
+
+<h2>Meus Álbuns Favoritos</h2>
+
+<p>Essa é uma "pequena" listinha dos meus álbuns de música favoritos! Pretendo fazer alguns posts sobre alguns dos álbums que mais me marcaram :)</p>
+
+<p>OBS: Em constante update...</p>
+
+<ul id="albuns">
+    {% for album in site.data.albuns %}
+
+    <li>
+    
+        <img src="{{ album.cover }}" width="120">
+    </li>
+
+    {% endfor %}
+
+</ul>
+
+
+

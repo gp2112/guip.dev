@@ -1,5 +1,7 @@
 <head>
-	<title>Início</title>
+    {%- if page.title -%}
+    <title>{{ page.title }}</title>
+    {%- endif -%}
 	<meta charset="UTF-8">
 	<meta property="og:image" content="/img/dev.jpg">
 	<link rel="stylesheet" href="/assets/css/light.css">
