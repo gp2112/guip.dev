@@ -28,7 +28,7 @@ E todo esse ataque a um jornalista movido por um Estado, deveria fazer a imprens
 
 No geral, a imprensa no mundo todo tem dado um grande suporte a Assange. Os principais jornais dos EUA, por exemplo, com quem Assange possuia parceiras quando divulgou os principais Leaks, fizeram editoriais em sua defesa. 
 
-Um dos maiores jornais estadunidenses, por exemplo, escreveu um editorial:
+Um dos maiores jornais britânicos, por exemplo, escreveu um editorial:
 
 **[The Guardian - "The Guardian view on Julian Assange’s extradition: a bad day for journalism"](https://www.theguardian.com/commentisfree/2022/jun/17/the-guardian-view-on-julian-assanges-extradition-a-bad-day-for-journalism)**
 
