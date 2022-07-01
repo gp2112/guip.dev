@@ -4,6 +4,10 @@
 
 @import "typography", "menu";
 
+.post-list li {
+    list-style-type: none;
+}
+
 #albuns {
     list-style-type: none;
 }
