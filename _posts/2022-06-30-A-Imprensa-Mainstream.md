@@ -12,7 +12,7 @@ No dia 17 de junho deste ano de 2022, numa sexta-feira, não só Julian Assange,
 
 Sendo extraditado aos EUA, o jornalista pode ser condenado a até 170 anos de prisão, já que deverá ser indiciado por espionagem.
 
-![Palácio do Planalto com NSA em cima](https://firstlook.org/theintercept/2015/07/04/nsa-top-brazilian-political-and-financial-targets-wikileaks/)
+![Palácio do Planalto com NSA em cima](https://wikileaks.org/nsa-brazil/WikiLeaks_US_Spying_Brazil.gif)
 
 E o que isso tem a ver com o Brasi? Bem, não só um país prender um cidadão de outro país por divulgar informações de interesse público abre um precedente terrível para todo o mundo, como também o Brasil está diretamente envolvido em alguns dos vazamentos do Wikileaks:
 
