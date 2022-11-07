@@ -2,10 +2,9 @@
 		<a href="/"><h1>Guilherme Paixão</h1></a>
 		<nav>
 			<ul>
-                		<li><a href="/">Sobre</a></li>
-                        <li><a href="/musica">Música</a></li>
-						<li><a href="/blog">Blog</a></li>
-                        <li><a href="/43827E2886E5C34F38D577538C814D625FBD99D1.asc">PGP</a></li>
+                {% for link in site.data.nav %}
+                <li><a {% if page.url == link.url%}class="selected"{% endif %} href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
 			</ul>
 		</nav>
 	</header>

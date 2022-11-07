@@ -24,3 +24,21 @@
     margin: 0;
     border: solid rgba(240, 3, 2, 0.9) 5px;
 }
+
+
+.collection {
+    width: 105%;
+    height: 20em;
+}
+.collection iframe {
+    display: inline-block;
+    margin: 2%;
+    width: 45%;
+    height: 98%;
+    max-height: 400px;
+    border-radius: 0.7em;
+}
+
+.selected {
+    color: red;
+}

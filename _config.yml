@@ -24,7 +24,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   Bem-vindo ao meu site pessoal! Aqui posto uns artigos no blog e tutoriais interessantes!  
 
 url: "https://guip.dev" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jonilare
 github_username:  gp2112
 linkedin_username: guip2000
 instagram_username: guip2112
